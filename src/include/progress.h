@@ -60,6 +60,8 @@ public:
      ******************/
 
     std::string to_string() const;
+    
+    operator std::string() const;
 
 private:
 
@@ -137,5 +139,17 @@ std::string progress::to_string() const {
     return result;
 }
 
+progress::operator std::string() const {
+    return to_string();
+}
+
+
+/*******************
+ * Stream Output   *
+ *******************/
+std::ostream& operator<<(std::ostream& out, const progress& p) {
+    out<<p.to_string();
+    return out;
+}
 
 #endif
