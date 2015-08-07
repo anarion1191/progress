@@ -2,10 +2,10 @@
 Text-based progress bar for C++.
 
 # Build Instructions
-To include Progress in any code, just include the header file "progress.h". In order to use the class, you can do the following:
+In order to use `Progress`, just include the header file `progress.h`. Look at the following examples on how to use the class:
 ```
-  progress p1(100); //initialize a progress class with maximum value of 100, default width: 10
-  p1.set_current(20); //set the current value out of 100, to 20. Equivalent to %20
+  progress p1(100); //initialize a progress class with maximum value of 100, default bar width: 10
+  p1.set_current(20); //set the current value to 20 out of 100, equivalent to %20
   cout<<p1<<endl; //print the progress bar to standard output
   
   p1.set_total(1000); //set the maximum value to 1000
@@ -13,5 +13,10 @@ To include Progress in any code, just include the header file "progress.h". In o
   p1.set_fill('+'); //set the fill character, default is '='
   cout<<p1<<endl;
   
-  progress p2(100, 20, 'X'); //parameters: total value, width (for the bar), fill character
+  progress p2(100, 20, 'X'); //parameters: total value, bar width in characters, fill character
 ```
+
+# Future Task List
+- [ ] Provide a method to easily customize the progress bar
+- [ ] Evaluate and plan for thread-safety
+- [ ] Incorporate C++11 threading facilities
